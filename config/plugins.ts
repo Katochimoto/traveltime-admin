@@ -1,7 +1,7 @@
 export default ({ env }) => ({
   // https://market.strapi.io/plugins/@strapi-plugin-sentry
   sentry: {
-    enabled: false, // env('NODE_ENV') === 'production',
+    enabled: env('NODE_ENV') === 'production',
     config: {
       dsn: env('SENTRY_DSN'),
       sendMetadata: true,
@@ -10,7 +10,7 @@ export default ({ env }) => ({
   // https://market.strapi.io/plugins/strapi-prometheus
   // /api/metrics
   'strapi-prometheus': {
-    enabled: false,
+    enabled: env('NODE_ENV') === 'production',
     config: {
       // add prefix to all the prometheus metrics names.
       prefix: '',
