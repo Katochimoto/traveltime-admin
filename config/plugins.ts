@@ -36,5 +36,18 @@ export default ({ env }) => ({
         name: 'strapi-prometheus',
       },
     }
-  }
+  },
+  // https://market.strapi.io/providers/strapi-provider-upload-ipfs-storage
+  upload: {
+    config: {
+      provider: 'strapi-provider-upload-ipfs-storage',
+      providerOptions: {
+        defaultStorage: 'web3',
+        web3: {
+          // https://web3.storage/tokens/
+          token: env('WEB3_TOKEN'),
+        },
+      },
+    },
+  },
 });

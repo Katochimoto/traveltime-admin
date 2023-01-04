@@ -10,14 +10,17 @@ docker create \
   --platform linux/amd64 \
   --name traveltime \
   --rm \
-  --cpus 1 \
-  --memory 2GB \
+  --cpus 2 \
+  --memory 1GB \
   --memory-swap -1 \
   --network db_net \
-  --env-file /Volumes/barracuda/traveltime-admin/.env \
+  --env-file /home/rikishi/traveltime-admin/.env \
   --expose 1337 \
   -p 1337:1337/tcp \
   rikishi/traveltime:latest
+
+
+docker create --platform linux/amd64 --name traveltime --rm --cpus 2 --memory 1GB --memory-swap -1 --network db_net --env-file /home/rikishi/traveltime-admin/.env --expose 1337 -p 1337:1337/tcp rikishi/traveltime:latest
 
 docker start -ai traveltime
 ```
