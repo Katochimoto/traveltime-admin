@@ -1,3 +1,27 @@
+```
+docker network create db_net
+
+docker build --progress plain \
+  --compress \
+  --platform linux/amd64 \
+  --tag rikishi/traveltime:latest .
+
+docker create \
+  --platform linux/amd64 \
+  --name traveltime \
+  --rm \
+  --cpus 1 \
+  --memory 2GB \
+  --memory-swap -1 \
+  --network db_net \
+  --env-file /Volumes/barracuda/traveltime-admin/.env \
+  --expose 1337 \
+  -p 1337:1337/tcp \
+  rikishi/traveltime:latest
+
+docker start -ai traveltime
+```
+
 # 🚀 Getting started with Strapi
 
 Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html) (CLI) which lets you scaffold and manage your project in seconds.
