@@ -5,6 +5,10 @@ export default ({ env }) => ({
     config: {
       dsn: env('SENTRY_DSN'),
       sendMetadata: true,
+      init: {
+        sampleRate: 1.0,
+        tracesSampleRate: 0.5,
+      },
     },
   },
   // https://market.strapi.io/plugins/strapi-prometheus
