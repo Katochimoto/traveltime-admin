@@ -1,7 +1,7 @@
 export default {
   rest: {
-    // defaultLimit: 25,
-    // maxLimit: 100,
-    withCount: false,
+    prefix: '/api',
+    defaultLimit: 100000,
+    maxLimit: 100000,
   },
 };
