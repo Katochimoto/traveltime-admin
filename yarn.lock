@@ -12084,6 +12084,11 @@ strapi-plugin-country-select@^1.0.0:
   dependencies:
     i18n-iso-countries "^7.5.0"
 
+strapi-plugin-transformer@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.npmjs.org/strapi-plugin-transformer/-/strapi-plugin-transformer-2.1.1.tgz#9ee28783bfb9f2848b3bfd73cc4227d003fe611e"
+  integrity sha512-k9/iHct+VlHu7espK4epupZ7RSRhl3dBgw5nc2PZfSQ8Maq3Kci6Q+QV1uiLfONP6vEY9mbvLpAjY0lam5CQTw==
+
 strapi-plugin-wysiwyg-react-md-editor@^4.3.0:
   version "4.3.0"
   resolved "https://registry.npmjs.org/strapi-plugin-wysiwyg-react-md-editor/-/strapi-plugin-wysiwyg-react-md-editor-4.3.0.tgz#c1f5f301b05be0a38061ddb9abe8f0ecba85e9d4"
