@@ -11,8 +11,12 @@ export default factories.createCoreController('api::article.article', ({ strapi 
       where: {
         updatedAt: { $gt: new Date(lastSync) },
       },
+      orderBy: { updatedAt: 'DESC' },
+      limit: 1000,
+      populate: ['logo'],
     });
 
-    ctx.body = entries;
+    const sanitizedEntries = await this.sanitizeOutput(entries, ctx);
+    return this.transformResponse(sanitizedEntries);
   },
 }));
