@@ -3,7 +3,10 @@ export default {
     {
       method: 'GET',
       path: '/articles/sync',
-      handler: 'Article.sync',
+      handler: 'article.sync',
+      config: {
+        auth: false,
+      },
     }
   ]
 }
