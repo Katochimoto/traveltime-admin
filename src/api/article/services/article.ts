@@ -27,7 +27,8 @@ export default factories.createCoreService('api::article.article', ({ strapi }) 
         publishedAt: item.publishedAt,
         title: item.title,
         description: item.description,
-        logo: item.logo?.formats?.large?.url,
+        logoImg: item.logo?.formats?.small?.url,
+        coverImg: item.logo?.formats?.large?.url,
       })),
       deleted: entries.filter((item) => item.deleted).map((item) => item.id),
     };
