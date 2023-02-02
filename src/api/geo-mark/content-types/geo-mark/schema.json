@@ -4,7 +4,8 @@
   "info": {
     "singularName": "geo-mark",
     "pluralName": "geo-marks",
-    "displayName": "Geo Mark"
+    "displayName": "Geo Mark",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -96,6 +97,28 @@
       },
       "type": "json",
       "required": false
+    },
+    "logo": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
+    "deleted": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "boolean",
+      "default": false,
+      "required": true
     }
   }
 }
