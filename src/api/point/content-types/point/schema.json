@@ -53,7 +53,8 @@
       "type": "enumeration",
       "enum": [
         "entertainment",
-        "events"
+        "events",
+        "attraction"
       ],
       "required": true
     },
