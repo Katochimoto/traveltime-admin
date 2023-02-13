@@ -98,6 +98,15 @@
       },
       "type": "float",
       "required": true
+    },
+    "uuid": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "customField",
+      "customField": "plugin::field-uuid.uuid"
     }
   }
 }
