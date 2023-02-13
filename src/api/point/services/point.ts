@@ -19,7 +19,7 @@ export default factories.createCoreService('api::point.point', ({ strapi }) => (
 
     return {
       replaced: entries.filter((item) => !item.deleted).map((item) => ({
-        id: item.uuid || item.id,
+        id: String(item.uuid || item.id),
         locale: item.locale,
         createdAt: item.createdAt,
         updatedAt: item.updatedAt,
@@ -33,7 +33,7 @@ export default factories.createCoreService('api::point.point', ({ strapi }) => (
         logoImg: item.logo?.formats?.small?.url,
         coverImg: item.logo?.formats?.large?.url,
       })),
-      deleted: entries.filter((item) => item.deleted).map((item) => item.uuid || item.id),
+      deleted: entries.filter((item) => item.deleted).map((item) => String(item.uuid || item.id)),
     };
   },
 }));
