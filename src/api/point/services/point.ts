@@ -20,6 +20,7 @@ export default factories.createCoreService('api::point.point', ({ strapi }) => (
     return {
       replaced: entries.filter((item) => !item.deleted).map((item) => ({
         id: String(item.uuid || item.id),
+        serverId: item.id,
         locale: item.locale,
         createdAt: item.createdAt,
         updatedAt: item.updatedAt,
