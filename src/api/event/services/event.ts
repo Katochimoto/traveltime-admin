@@ -1,12 +1,12 @@
 /**
- * point service
+ * event service
  */
 
 import { factories } from '@strapi/strapi';
 
-export default factories.createCoreService('api::point.point', ({ strapi }) => ({
+export default factories.createCoreService('api::event.event', ({ strapi }) => ({
   async sync({ lastSync, locale }) {
-    const entries = await strapi.db.query('api::point.point').findMany({
+    const entries = await strapi.db.query('api::event.event').findMany({
       where: {
         locale: locale || 'en',
         ...(lastSync ? {
@@ -14,12 +14,13 @@ export default factories.createCoreService('api::point.point', ({ strapi }) => (
         } : undefined),
       },
       orderBy: { updatedAt: 'desc' },
-      populate: ['logo'],
+      populate: ['logo', 'points'],
     });
 
     return {
       replaced: entries.filter((item) => !item.deleted).map((item) => ({
         id: String(item.uuid || item.id),
+        country: item.country,
         locale: item.locale,
         createdAt: item.createdAt,
         updatedAt: item.updatedAt,
@@ -27,10 +28,9 @@ export default factories.createCoreService('api::point.point', ({ strapi }) => (
         title: item.title,
         intro: item.intro,
         description: item.description,
-        category: item.category,
-        lat: item.lat,
-        lng: item.lng,
-        address: item.address,
+        rrule: item.rrule,
+        duration: item.duration,
+        points: item.points.map((point) => String(point.uuid || point.id)),
         logoImg: item.logo?.formats?.small?.url,
         coverImg: item.logo?.formats?.large?.url,
       })),
