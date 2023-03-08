@@ -54,8 +54,18 @@
       "type": "enumeration",
       "enum": [
         "entertainment",
-        "events",
-        "attraction"
+        "event",
+        "attraction",
+        "nightMarket",
+        "hypermarket",
+        "beach",
+        "restaurant",
+        "cafe",
+        "marina",
+        "police",
+        "gasStation",
+        "carRental",
+        "hotel"
       ],
       "required": true
     },
@@ -117,6 +127,22 @@
       },
       "type": "string",
       "maxLength": 500
+    },
+    "rrule": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "string"
+    },
+    "duration": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "string"
     }
   }
 }
