@@ -89,17 +89,17 @@
         }
       },
       "type": "string",
-      "required": true,
-      "maxLength": 200
+      "required": false,
+      "maxLength": 500
     },
     "duration": {
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
       },
       "type": "string",
-      "required": true,
+      "required": false,
       "maxLength": 100
     },
     "description": {
@@ -110,6 +110,36 @@
       },
       "type": "richtext",
       "required": true
+    },
+    "category": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "enumeration",
+      "enum": [
+        "event",
+        "holiday"
+      ],
+      "required": true,
+      "default": "event"
+    },
+    "dtstart": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "datetime"
+    },
+    "dtend": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "datetime"
     }
   }
 }
