@@ -9,6 +9,7 @@ export default factories.createCoreService('api::article.article', ({ strapi }) 
     const entries = await strapi.db.query('api::article.article').findMany({
       where: {
         locale: locale || 'en',
+        publicationState: 'live',
         ...(lastSync ? {
           updatedAt: { $gt: lastSync },
         } : undefined),
