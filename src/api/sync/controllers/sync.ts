@@ -1,10 +1,11 @@
 export default {
   async sync(ctx) {
     const datetime = new Date().toISOString();
-    const [articles, points, events] = await Promise.all([
+    const [articles, points, events, routes] = await Promise.all([
       strapi.service('api::article.article').sync(ctx.query),
       strapi.service('api::point.point').sync(ctx.query),
       strapi.service('api::event.event').sync(ctx.query),
+      strapi.service('api::route.route').sync(ctx.query),
     ]);
 
     ctx.send({
@@ -12,6 +13,7 @@ export default {
         articles,
         points,
         events,
+        routes,
       },
       datetime,
     });
