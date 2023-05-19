@@ -4,7 +4,8 @@
   "info": {
     "singularName": "route",
     "pluralName": "routes",
-    "displayName": "Routes"
+    "displayName": "Routes",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -44,11 +45,12 @@
       "required": true
     },
     "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
       ],
-      "type": "media",
-      "multiple": false,
       "pluginOptions": {
         "i18n": {
           "localized": false
@@ -82,6 +84,18 @@
       },
       "type": "json",
       "required": true
+    },
+    "waypoints": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::route-waypoint.route-waypoint",
+      "mappedBy": "route"
+    },
+    "legs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::route-leg.route-leg",
+      "mappedBy": "route"
     }
   }
 }

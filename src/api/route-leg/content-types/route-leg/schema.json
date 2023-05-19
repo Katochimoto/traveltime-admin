@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "route_legs",
+  "info": {
+    "singularName": "route-leg",
+    "pluralName": "route-legs",
+    "displayName": "Route Legs",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "path": {
+      "type": "text",
+      "pluginOptions": {}
+    },
+    "from_waypoint": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::route-waypoint.route-waypoint"
+    },
+    "to_waypoint": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::route-waypoint.route-waypoint"
+    },
+    "deleted": {
+      "type": "boolean",
+      "default": false,
+      "required": true,
+      "pluginOptions": {}
+    },
+    "uuid": {
+      "type": "string",
+      "maxLength": 40,
+      "pluginOptions": {}
+    },
+    "route": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::route.route",
+      "inversedBy": "legs"
+    }
+  }
+}
