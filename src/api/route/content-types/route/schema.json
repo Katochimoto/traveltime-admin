@@ -76,15 +76,6 @@
       "type": "string",
       "maxLength": 40
     },
-    "data": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "type": "json",
-      "required": true
-    },
     "waypoints": {
       "type": "relation",
       "relation": "oneToMany",
@@ -96,6 +87,15 @@
       "relation": "oneToMany",
       "target": "api::route-leg.route-leg",
       "mappedBy": "route"
+    },
+    "bounds": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "json",
+      "required": true
     }
   }
 }

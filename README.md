@@ -1,4 +1,10 @@
 ```
+ssh -L 5432:127.0.0.1:5432 -N -f nft-client
+ssh -R 5432:127.0.0.1:5432 -N -f nft-client
+```
+
+
+```
 docker network create db_net
 
 docker build --progress plain \
