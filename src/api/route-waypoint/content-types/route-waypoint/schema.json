@@ -70,6 +70,15 @@
       },
       "type": "string",
       "maxLength": 200
+    },
+    "order": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "integer",
+      "required": true
     }
   }
 }
