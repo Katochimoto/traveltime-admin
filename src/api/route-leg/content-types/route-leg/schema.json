@@ -8,7 +8,7 @@
     "description": ""
   },
   "options": {
-    "draftAndPublish": false
+    "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
@@ -25,12 +25,6 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::route-waypoint.route-waypoint"
-    },
-    "deleted": {
-      "type": "boolean",
-      "default": false,
-      "required": true,
-      "pluginOptions": {}
     },
     "uuid": {
       "type": "string",

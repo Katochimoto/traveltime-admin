@@ -9,7 +9,6 @@ export default factories.createCoreService('api::event.event', ({ strapi }) => (
     const entries = await strapi.db.query('api::event.event').findMany({
       where: {
         locale: locale || 'en',
-        publishedAt: { $notNull: true },
         ...(lastSync ? {
           updatedAt: { $gt: lastSync },
         } : undefined),
@@ -19,7 +18,7 @@ export default factories.createCoreService('api::event.event', ({ strapi }) => (
     });
 
     return {
-      replaced: entries.filter((item) => !item.deleted).map((item) => ({
+      replaced: entries.filter((item) => item.publishedAt !== null).map((item) => ({
         id: String(item.uuid || item.id),
         country: item.country,
         locale: item.locale,
@@ -38,7 +37,7 @@ export default factories.createCoreService('api::event.event', ({ strapi }) => (
         logoImg: item.logo?.formats?.small?.url ?? null,
         coverImg: item.logo?.formats?.large?.url ?? null,
       })),
-      deleted: entries.filter((item) => item.deleted).map((item) => String(item.uuid || item.id)),
+      deleted: entries.filter((item) => item.publishedAt === null).map((item) => String(item.uuid || item.id)),
     };
   },
 }));

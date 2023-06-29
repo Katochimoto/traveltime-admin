@@ -32,16 +32,6 @@
         }
       }
     },
-    "deleted": {
-      "type": "boolean",
-      "default": false,
-      "required": true,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
     "uuid": {
       "type": "string",
       "maxLength": 40,

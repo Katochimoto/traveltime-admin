@@ -17,16 +17,17 @@ export default factories.createCoreService('api::route-leg.route-leg', ({ strapi
     });
 
     return {
-      replaced: entries.filter((item) => !item.deleted).map((item) => ({
+      replaced: entries.filter((item) => item.publishedAt !== null).map((item) => ({
         id: String(item.uuid || item.id),
         createdAt: item.createdAt,
         updatedAt: item.updatedAt,
+        publishedAt: item.publishedAt,
         path: item.path,
         route: String(item.route?.uuid || item.route?.id),
         fromWaypoint: String(item.from_waypoint?.uuid || item.from_waypoint?.id),
         toWaypoint: String(item.to_waypoint?.uuid || item.to_waypoint?.id),
       })),
-      deleted: entries.filter((item) => item.deleted).map((item) => String(item.uuid || item.id)),
+      deleted: entries.filter((item) => item.publishedAt === null).map((item) => String(item.uuid || item.id)),
     };
   },
 }));

@@ -58,16 +58,6 @@
         }
       }
     },
-    "deleted": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "type": "boolean",
-      "default": false,
-      "required": true
-    },
     "intro": {
       "pluginOptions": {
         "i18n": {

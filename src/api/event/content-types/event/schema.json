@@ -67,16 +67,6 @@
         }
       }
     },
-    "deleted": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "type": "boolean",
-      "default": false,
-      "required": true
-    },
     "points": {
       "type": "relation",
       "relation": "oneToMany",
