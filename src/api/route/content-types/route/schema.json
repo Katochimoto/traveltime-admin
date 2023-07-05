@@ -32,7 +32,7 @@
           "localized": true
         }
       },
-      "type": "string",
+      "type": "text",
       "maxLength": 1000
     },
     "description": {
