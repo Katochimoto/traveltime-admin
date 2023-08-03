@@ -31,6 +31,7 @@ export default factories.createCoreService('api::point.point', ({ strapi }) => (
         lat: item.lat,
         lng: item.lng,
         address: item.address,
+        web: item.web,
         logoImg: item.logo?.formats?.small?.url ?? null,
         coverImg: item.logo?.formats?.large?.url ?? null,
       })),

@@ -117,6 +117,14 @@
       },
       "type": "string",
       "maxLength": 500
+    },
+    "web": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
     }
   }
 }

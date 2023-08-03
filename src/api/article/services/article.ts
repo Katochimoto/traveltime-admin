@@ -28,6 +28,7 @@ export default factories.createCoreService('api::article.article', ({ strapi }) 
         title: item.title,
         intro: item.intro,
         description: item.description,
+        web: item.web,
         logoImg: item.logo?.formats?.small?.url ?? null,
         coverImg: item.logo?.formats?.large?.url ?? null,
       })),

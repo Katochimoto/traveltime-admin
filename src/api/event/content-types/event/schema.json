@@ -130,6 +130,14 @@
         }
       },
       "type": "datetime"
+    },
+    "web": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
     }
   }
 }

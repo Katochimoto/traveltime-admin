@@ -28,6 +28,7 @@ export default factories.createCoreService('api::route.route', ({ strapi }) => (
         intro: item.intro,
         description: item.description,
         latlngBounds: item.latlngBounds,
+        web: item.web,
         logoImg: item.logo?.formats?.small?.url ?? null,
         coverImg: item.logo?.formats?.large?.url ?? null,
       })),

@@ -33,6 +33,7 @@ export default factories.createCoreService('api::event.event', ({ strapi }) => (
         category: item.category,
         dtstart: item.dtstart,
         dtend: item.dtend,
+        web: item.web,
         points: item.points.map((point) => String(point.uuid || point.id)),
         logoImg: item.logo?.formats?.small?.url ?? null,
         coverImg: item.logo?.formats?.large?.url ?? null,
