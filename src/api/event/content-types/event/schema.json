@@ -110,7 +110,11 @@
       "type": "enumeration",
       "enum": [
         "event",
-        "holiday"
+        "holiday",
+        "nationalHoliday",
+        "regionalHoliday",
+        "governmentHoliday",
+        "notPublicHoliday"
       ],
       "required": true,
       "default": "event"
@@ -138,6 +142,16 @@
         }
       },
       "type": "string"
+    },
+    "moveMondayIfWeekend": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "boolean",
+      "default": false,
+      "required": true
     }
   }
 }
