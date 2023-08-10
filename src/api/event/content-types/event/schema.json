@@ -119,22 +119,6 @@
       "required": true,
       "default": "event"
     },
-    "dtstart": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "type": "datetime"
-    },
-    "dtend": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "type": "datetime"
-    },
     "web": {
       "pluginOptions": {
         "i18n": {
@@ -152,6 +136,22 @@
       "type": "boolean",
       "default": false,
       "required": true
+    },
+    "dtstart": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "string"
+    },
+    "dtend": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "string"
     }
   }
 }
